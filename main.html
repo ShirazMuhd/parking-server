@@ -11,7 +11,7 @@
     <script>
       const uid = () => {
         if (localStorage.getItem("uid") === null) {
-          axios.get("http://parking-server-8sj1.onrender.com/getUid").then((res) => {
+          axios.get("https://parking-server-8sj1.onrender.com/getUid").then((res) => {
             let data = res.data;
             localStorage.setItem("uid", JSON.stringify(data));
           });
@@ -140,7 +140,7 @@
           parkingsContainer.removeChild(parkingsContainer.firstChild);
         }
         parkingsContainer.appendChild(title);
-        axios.get("http://parking-server-8sj1.onrender.com/getParking?").then((res) => {
+        axios.get("https://parking-server-8sj1.onrender.com/getParking?").then((res) => {
           data = res.data;
           console.log(data);
           const myArr = Object.entries(data).map(([slot, value]) => ({
